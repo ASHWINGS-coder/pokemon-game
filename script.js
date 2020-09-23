@@ -28,14 +28,11 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
 
 var arr = []
 
-arr[0] = 300;
-arr[1] = 300;
-
-// setInterval(function(){
-//     for(var i= 0 ; i<10 ; i++){
-//         arr[i] = Math.random() * (692 - 32) + 32
-//     }
-// },5000)
+setInterval(function(){
+    for(var i= 0 ; i<10 ; i++){
+        arr[i] = Math.random() * (692 - 32) + 32
+    }
+},5000)
 
 function animate() {
     ctx.font = "30px Arial";
@@ -86,6 +83,22 @@ function movePlayer() {
 
 // score count 
 
+function rangex(start, end , val) {
+    if(start<=val && val<=end){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function rangey(start, end , val) {
+    if(start<=val && val<=end){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function pos(){
 
     console.log("arr[0]" + " "+arr[0])
@@ -93,24 +106,35 @@ function pos(){
     console.log("player x" + " "+player.x)
     console.log("player y" + " "+player.y)
 
-    if(  arr[0] - 20 >= player.x >= arr[0] + 20  && player.y - 5 <= arr[1] <= player.y + 5){
+    if( rangex(arr[0]-20 , arr[0]+20 , player.x) && rangey(arr[1]-20 , arr[1]+20, player.y))
+    {
+        console.log("yes")
+        player.score++;
+    }
+
+    if( rangex(arr[2]-20 , arr[2]+20 , player.x) && rangey(arr[3]-20 , arr[3]+20, player.y))
+    {
+        console.log("yes")
+        player.score++;
+    }
+
+    if( rangex(arr[4]-20 , arr[4]+20 , player.x) && rangey(arr[5]-20 , arr[5]+20, player.y))
+    {
+        console.log("yes")
+        player.score++;
+    }
+
+    if( rangex(arr[6]-20 , arr[6]+20 , player.x) && rangey(arr[7]-20 , arr[7]+20, player.y))
+    {
+        console.log("yes")
+        player.score++;
+    }
+
+    if( rangex(arr[8]-20 , arr[8]+20 , player.x) && rangey(arr[9]-20 , arr[9]+20, player.y))
+    {
         console.log("yes")
         player.score++;
     }
   
-    // if(arr[0] == player.x  && arr[1] == player.y  ){
-    //    player.score++;
-    // }
-    // if(arr[2] == player.x  && arr[3] == player.y  ){
-    //     player.score++;
-    //  }
-    //  if(arr[4] == player.x  && arr[5] == player.y  ){
-    //     player.score++;
-    //  }
-    //  if(arr[6] == player.x  && arr[7] == player.y  ){
-    //     player.score++;
-    //  }
-    //  if(arr[8] == player.x  && arr[9] == player.y  ){
-    //     player.score++;
-    //  }
+   
 }
