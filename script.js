@@ -32,7 +32,7 @@ setInterval(function(){
     for(var i= 0 ; i<10 ; i++){
         arr[i] = Math.random() * (692 - 32) + 32
     }
-},5000)
+},2000)
 
 function animate() {
     ctx.font = "30px Arial";
